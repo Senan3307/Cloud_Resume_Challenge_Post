@@ -19,3 +19,6 @@ Serves as the database to store visitor counts or other data related to the resu
 
 ## IAM
 Manages permissions for the AWS resources, ensuring secure access. IAM policies are applied to Lambda, S3, and DynamoDB to control which resources each service can access. IAM is especially important in terms of security. If a person is able to get a root user access, they are able to conduct expensive actions on AWS. 
+
+## CloudFront
+Serves as a content delivery network (CDN) to cache and deliver the website content globally with low latency. CloudFront improves the performance and availability of the website, especially for users in different geographic locations.
