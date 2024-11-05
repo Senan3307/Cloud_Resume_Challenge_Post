@@ -22,3 +22,6 @@ Manages permissions for the AWS resources, ensuring secure access. IAM policies 
 
 ## CloudFront
 Serves as a content delivery network (CDN) to cache and deliver the website content globally with low latency. CloudFront improves the performance and availability of the website, especially for users in different geographic locations.
+
+## EC2
+A service that provides scalable virtual servers, or instances, in the cloud.
