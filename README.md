@@ -2,32 +2,32 @@
 
 # The What and Why of the Cloud Resume Challenge 
 
-The Cloud Resume Challenge is a project designed to help individuals gain hands-on experience with cloud computing. The challenge involves creating and hosting your personal resume on a cloud platform like AWS, using HTML, CSS, Javascript, and implementing various cloud technologies. Key requirements include setting up a custom domain with HTTPS, building a visitor counter using a back-end API, storing visitor data in a database, and managing the infrastructure using tools like Terraform. Additionally, I was required to integrate a CI/CD pipeline for automated testing and deployment, as well as document their work in a GitHub repository. These steps provide a practical introduction to essential cloud services and development workflows.
+The Cloud Resume Challenge was an incredible project that gave me hands-on experience with cloud computing. I created and hosted my personal resume on AWS, using HTML, CSS, and JavaScript, while diving into various cloud technologies. Some key steps included setting up a custom domain with HTTPS, building a visitor counter with a back-end API, and storing visitor data in a database. I also managed the infrastructure using Terraform and implemented a CI/CD pipeline for automated testing and deployment. Throughout the process, I documented my work in a GitHub repository, which helped me organize my project and showcase my progress.
 
-The challenge was an excellent way to develop and showcase cloud computing skills, making it ideal for beginners like myself or those looking to break into the tech industry. It offers hands-on experience with key cloud concepts, such as hosting, APIs, databases, and version control, while teaching problem-solving and best practices. Beyond technical learning, the project serves as a professional portfolio piece, demonstrating initiative and technical ability to potential employers. By completing the Cloud Resume Challenge, participants not only build confidence in their cloud skills but also create a standout resume that speaks to their dedication and expertise.
+For me, the challenge was an excellent way to learn and demonstrate cloud computing skills. It provided hands-on experience with hosting, APIs, databases, and version control, all while teaching me problem-solving and best practices. Beyond the technical skills, completing the project gave me something that I can add onto my resume that highlights my initiative and technical abilities to potential employers. By the end, I felt more confident in my cloud skills and my ability to deploy various tools on AWS adequately. 
 
 # Services Used and the purpose for each service
 
 ## S3
-Hosts the static website for the resume. S3 provides scalable storage for the HTML, CSS, and JavaScript files, making it a cost-effective way to deploy static content. In this project, the S3 buckets created such as senanotsuka.com held files like my index.html, images, and many more. 
+S3, which stands for simple storage service, hosted the static website for the resume. S3 provides scalable storage for HTML, CSS, and JavaScript files while also being extremely durable, making it a cost-effective and reliable way to deploy static content. In this project, the S3 buckets created such as senanotsuka.com held files like my index.html, images, and many more. 
 
 ## Route 53
-Manages the DNS (Domain Name System) for the custom domain, directing traffic to the S3 bucket or CloudFront distribution. It helps set up a custom domain name (e.g., yourname.com) for the website.
+Route 53 manages the DNS (Domain Name System) for the custom domain (senanotsuka.com) while also directing traffic to the S3 bucket or CloudFront distribution. It helps set up a custom domain name so that users don't have to memorize complex sequences to get to your website. 
 
 ## Lambda
-Implements serverless backend logic, often used to update a visitor counter on the website. Lambda functions run backend code triggered by specific events without needing a dedicated server. In this case, it was the java script that updated the visitor counter. 
+Lambda implements serverless backend logic which was used to update the visitor counter on the website. Lambda functions ran the backend code triggered by specific events without needing a dedicated server. In this case, it was the java script that updated the visitor counter. 
 
 ## API Gateway
-Acts as a serverless API endpoint that triggers the Lambda function. API Gateway provides a secure and scalable way to expose the Lambda function to the web for handling requests (like tracking website visits).
+The API gateway acts as a serverless API endpoint that triggers the Lambda function. API Gateway provides a secure and scalable way to expose the Lambda function to the web for handling requests (like tracking website visits).
 
 ## DynamoDB
-Serves as the database to store visitor counts or other data related to the resume site. DynamoDB is a managed NoSQL database that integrates well with Lambda and can handle high request volumes.
+DynamoDB serves as the database to store visitor counts or other data related to the resume site. DynamoDB is a managed NoSQL database that integrates well with Lambda and can handle high request volumes. In the cloud resume challenge, we decided to use a NoSQL database like DynamoDB instead of a relational database like RDS because it is fully serverless and managed, and since the visitor counter typically involves storing simple key-value pairs, DynamoDB was a better fit. 
 
 ## IAM
-Manages permissions for the AWS resources, ensuring secure access. IAM policies are applied to Lambda, S3, and DynamoDB to control which resources each service can access. IAM is especially important in terms of security. If a person is able to get a root user access, they are able to conduct expensive actions on AWS. 
+IAM Manages permissions for the AWS resources, ensuring secure access. IAM policies are applied to Lambda, S3, DynamoDB, and various other resources to control which resources each service can access as well as users. IAM is especially important in terms of security. If a person is able to get a root user access, they are able to conduct expensive actions on AWS. Thus, typically, users should not use root user access when using AWS. 
 
 ## CloudFront
-Serves as a content delivery network (CDN) to cache and deliver the website content globally with low latency. CloudFront improves the performance and availability of the website, especially for users in different geographic locations.
+Cloudfront serves as a content delivery network (CDN) to cache and deliver the website content globally with low latency. CloudFront improves the performance and availability of the website, especially for users in different geographic locations. Further, along with Certificate Manager, CloudFront allows the website to be securely accessed through HTTPS by acting as a secure, distributed network layer between users and the website's origin server. 
 
 ## EC2
-A service that provides scalable virtual servers, or instances, in the cloud.
+A service that provides scalable virtual servers, or instances, in the cloud. While we learned about this in class, we did not use the service mainly for cost purposes. Running a virtual machine through an EC2 instance would cost us money as well as not being serverless. The whole theme of the project is to create a serverless architecture and EC2 would require us to use and manage servers. 
