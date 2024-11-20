@@ -1,5 +1,11 @@
 # Cloud_Resume_Challenge_Post
 
+# The What and Why of the Cloud Resume Challenge 
+
+The Cloud Resume Challenge is a project designed to help individuals gain hands-on experience with cloud computing. The challenge involves creating and hosting your personal resume on a cloud platform like AWS, using HTML, CSS, Javascript, and implementing various cloud technologies. Key requirements include setting up a custom domain with HTTPS, building a visitor counter using a back-end API, storing visitor data in a database, and managing the infrastructure using tools like Terraform. Additionally, I was required to integrate a CI/CD pipeline for automated testing and deployment, as well as document their work in a GitHub repository. These steps provide a practical introduction to essential cloud services and development workflows.
+
+The challenge was an excellent way to develop and showcase cloud computing skills, making it ideal for beginners like myself or those looking to break into the tech industry. It offers hands-on experience with key cloud concepts, such as hosting, APIs, databases, and version control, while teaching problem-solving and best practices. Beyond technical learning, the project serves as a professional portfolio piece, demonstrating initiative and technical ability to potential employers. By completing the Cloud Resume Challenge, participants not only build confidence in their cloud skills but also create a standout resume that speaks to their dedication and expertise.
+
 # Services Used and the purpose for each service
 
 ## S3
